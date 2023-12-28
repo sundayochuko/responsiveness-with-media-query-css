@@ -3,7 +3,14 @@ body {
     margin: 0;
     padding: 0;
     background-color: grey;
+    position: relative;
+}
 
+button {
+  height: 40px;
+  width: 120px;
+  background-color: green;
+  z-index: 30;
 }
 
 header {
@@ -32,6 +39,8 @@ nav {
   color: white;
   position: absolute;
   top: 0;
+  z-index: 30;
+  background-color: blue;
 }
 
 ul {
@@ -61,7 +70,7 @@ p {
   z-index: 20;
 }
 
-.menu {
+.mobile-menu-icon {
   font-size: 25px;
   padding-right: 8px;
   color: white;
@@ -75,19 +84,41 @@ p {
   z-index: 10;
 }
 
-.menu {
-  display: none
+.mobile-menu-icon {
+  display: none;
+}
+
+.mobile-menu-component {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  background-color: red;
+}
+
+input {
+  z-index: 30;
 }
 
 @media  (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+  
   ul {
     display: none;
   }
 
- .menu {
+ .mobile-menu-icon {
     display: block
   }
  
+  .mobile-menu-component.show {
+    display: block;
+    top: 55px;
+  }
 }
 
 
